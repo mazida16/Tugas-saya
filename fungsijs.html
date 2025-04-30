@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // fungsi untuk melakukan operasi penjumlahan
+        function tambah(angka1, angka2){
+        return angka1 + angka2;    
+        }
+
+        // fungsi untuk melakukan operasi pengurangan
+        function kurang(angka1, angka2){
+        return angka1 - angka2;    
+        }
+
+        // fungsi untuk melakukan operasi perkalian
+        function kali(angka1, angka2){
+        return angka1 * angka2;    
+        }
+
+        // fungsi untuk melakukan operasi pembagian
+        function bagi(angka1, angka2){
+        // Memastikan tidak terjadi pembagian dengan nol
+        if (angka2 === 0) {
+            return "Eror! Tidak dapat melakukan pembagian dengan nol.";
+        }
+        return angka1 /angka2;    
+        }
+
+        // fungsi utama kalkulator 
+        function kalkulatorsederhana() {
+        // Meminta input angka pertama dari pengguna
+        const angka1String = prompt("Masukkan angka pertama:");
+        // Mengubah input string menjadi angka (float untuk desimal) 
+        const angka1 = parseFloat(angka1String);
+        
+        // Memeriksa apakah input angka pertama valid
+        if (iaNan(angka1)) {
+            alert("input angka pertama tidak valid!");
+            return; // Menghentikan fungsi jika input tidak valid
+        }
+
+        // Meminta input operator dari pengguna
+        const operator = prompt("pilih operator (+, -, *, /);");
+
+        // Memeriksa apakah operator yang dimasukan valid
+        if(operator !== "+" && operator !== "-" && operator !== "*" && operator !== "/"){
+           alert("operator tidak valid!");
+           return;// menghentikan fungsi jika operator tidak valid 
+        }
+
+        // Meminta inputangka kedua dari pengguna 
+        const angka2String = prompt("masukkan angka kedua:");
+        // Mengubah input string menjadi angka (float untuk desimal)
+        const angka2 = parseFloat(angka2String);
+
+        // Memeriksa apakah input angka kedua valid
+        if(isNanaa(angka2)) {
+            alert("Input angka kedua tidak valid!");
+            return; // Menghentikan fungsi jika input tidak valid
+        }
+
+        let hasil;// Variabel untuk menyimpan hasil perhitungan
+
+        //Melakukan operasi berdasarkan operator yang dipilih 
+        switch (operator) {
+            case "+":
+            hasil = tambah(angka1, angka2);
+            break;
+            case "-":
+            hasil = kurang(angka1, angka2);
+            break;
+            case "*":
+            hasil = kali(angka1, angka2);
+            break;
+            case "/":
+            hasil = bagi(angka1, angka2);
+            break;
+        }
+
+        // Menampilkan hasil perhitungan kepada pengguna
+        alert(`hasil dari ${angka1} ${operator} ${angka2} adalah: ${hasil}`);
+        }
+
+        // Memanggil fungsi kalkulatorsederhana untuk menjalankan kalkulator
+        kalkulatorsederhana();
+
+
+ let mobil = ["Toyota", "Honda", "Suzuki"];
+ console.log(mobil.length); // Output: 3 (ada 3 mobil dalam array)       
+    </script>
+</body>
+</html>
